@@ -1,80 +1,71 @@
-# tweetXer
+# tweetXer ptBR
 
-You can use [this script](https://raw.githubusercontent.com/lucahammer/tweetXer/refs/heads/main/tweetXer.js) to delete all your Tweets. Even if they don't show up on your profile. But you need your Data Export for it to work.
-Because this automates the deletion, it may get your account banned. Not a bad outcome.
+### Atenção:
 
-# Video tutorial
+Todo o crédito desse script é do seu criador original [Luca Hammer](https://github.com/lucahammer/). Apenas traduzi a base do script para quem não entende inglês.
 
-[![Youtube player preview showing a screenrecording: Left half is a firefox with twitter.com open and and open console. Right side is a code editor with bullet points and a person looking at the viewer with animated blue birds flying around their head.](https://img.youtube.com/vi/jB1-z6LbX5w/0.jpg)](https://www.youtube.com/watch?v=jB1-z6LbX5w)
+# Como usar:
 
-English: [youtube.com/watch?v=jB1-z6LbX5w](https://www.youtube.com/watch?v=jB1-z6LbX5w)
+Você pode usar [este script](https://github.com/arielgmelo/tweetXer-ptbr/blob/main/tweetXer.js) para excluir todos os seus Tweets. Mesmo que eles não apareçam no seu perfil. Mas você precisa da sua pasta de dados exportada do Twitter para que funcione. Como isso automatiza a exclusão, pode resultar no banimento da sua conta. Não é um resultado ruim.
 
-German: [youtube.com/watch?v=HmQ7_ZgVNxg](https://www.youtube.com/watch?v=HmQ7_ZgVNxg)
+1.  Use o Firefox ou Safari se possível.
+2.  Entre na sua conta no Twitter.
+3.  Abra o console do navegador (F12).
+4.  Cole o [script completo](https://github.com/arielgmelo/tweetXer-ptbr/blob/main/tweetXer.js) no console e pressione Enter.
+5.  Uma barra azul irá aparecer no topo da sua janela.
+6.  Use o seletor de arquivo e selecione o arquivo tweet-headers.js oo tweets.js.
+7.  Espere até que todos os tweets sejam excluídos (cerca de 5-10 Tweets por segundo)
 
-# Usage
+Se o processo for interrompido a qualquer momento, você pode usar as opções avançadas para informar quantos Tweets foram excluídos na execução anterior, para não começar do zero novamente. O script tentará detectar automaticamente se já foi executado anteriormente, calculando a diferença entre os Tweets no arquivo e a contagem de Tweets no perfil. Se houver uma diferença, ele tentará pular automaticamente essa quantidade (+5% de margem). Se você quiser que ele comece do início, abra as 'Opções Avançadas' e insira 1 em vez de 0. Ele então pulará exatamente um Tweet e não tentará calcular uma quantidade.
 
-0.  Use Firefox or Safari if possible
-1.  Log into your Twitter account
-2.  Open the browser console (F12)
-3.  Paste the [whole script](https://raw.githubusercontent.com/lucahammer/tweetXer/main/tweetXer.js) into the console and press enter
-4.  A light blue bar appears at the top of the window
-5.  Use the file picker to select your tweet-headers.js or tweets.js file
-6.  Wait for all your Tweets to vanish (about 5-10 Tweets per second)
+# Como funciona?
 
-If the process is interrupted at any time, you can use the advanced options to enter how many Tweets have been deleted in the previous run to not start at zero again. The script will try to automatically detect if it was run before by calcualting the difference between Tweets in the file and the Tweet count on the profile. If there is a difference it will try to automatically skip that amount (+5% buffer). If you want it to start from the beginning, open 'Advanced options' and enter 1 instead of 0. It will the skip exactly one Tweet and not try to calculate an amount.
+Nunca use algo assim de uma fonte não confiável. O script intercepta as requisições do seu navegador para o Twitter e substitui os IDs dos Tweets pelos IDs do seu arquivo tweets.js. Isso permite que ele acesse os Tweets antigos e os exclua.
 
-# Alternative to copy & paste: userscript
+interceptação XHR inspirada por [github.com/ttodua/Tamper-Request-Javascript-Tool](https://github.com/ttodua/Tamper-Request-Javascript-Tool)
 
-Instead of copy-pasting the script, you can install it as a userscript: [greasyfork.org/en/scripts/476062-tweetxer](https://greasyfork.org/en/scripts/476062-tweetxer) (works with eg. [tampermonkey browser addon](https://addons.mozilla.org/firefox/addon/tampermonkey/))
+exclusão mais rápida inspirada por [github.com/Lyfhael/DeleteTweets](https://github.com/Lyfhael/DeleteTweets)
 
-The userscript works on smartphones as well. Android only. 1. Install [Firefox Mobile](https://www.mozilla.org/firefox/browsers/mobile/), 2. Install the [Tampermonkey addon](https://addons.mozilla.org/firefox/addon/tampermonkey/), 3. install the [script from greasyfork](https://greasyfork.org/en/scripts/476062-tweetxer). Open X com and the blue bar should show up. You may need to uninstall the X-App before.
+# Bônus: 
 
-# How it works
+### Exporte seus Salvos:
 
-Never use something like this from an untrusted source. The script intercepts requests from your browser to Twitter and replaces the Tweet-IDs
-with IDs from your tweets.js file. This allows it to access the old Tweets and delete them.
+Como os Salvos não estão incluídos na exportação de dados do Twitter, há um botão nas "Opções Avançadas" para exportá-los.
 
-XHR interception inspired by [github.com/ttodua/Tamper-Request-Javascript-Tool](https://github.com/ttodua/Tamper-Request-Javascript-Tool)
+### Exclusão de Tweets sem o tweet-headers.js:
 
-Faster deletion inspired by [github.com/Lyfhael/DeleteTweets](https://github.com/Lyfhael/DeleteTweets)
+Se por algum motivo você não puder usar a exportação de dados ou ela perdeu alguns Tweets, você pode usar o modo lento nas "Opções Avançadas". Esteja avisado, ele é muito lento porque precisa carregar os Tweets no seu perfil primeiro para excluí-los, e há vários limites de requisições para isso.
 
-# Bonus: Export your bookmarks
+### Deixar de seguir todos:
 
-Because bookmarks aren't included in the Twitter data export, there is a button under "Advanced options" to export them.
+Nas "Opções Avançadas", você pode automaticamente deixar de seguir todas as contas que segue. Pode ser necessário executar o processo novamente após um intervalo de tempo devido aos limites de taxa.
 
-# Bonus: Tweet deletion without data export
+# Problemas conhecidos e soluções:
 
-If for some reason you can't use your data export or it missed some Tweets, you can use slow mode under "Advanced options". Be warned, it is very slow because it has to load the Tweets on your profile first to delete them and there are various request limits for that.
+### Não consigo colar o script:
 
-# Bonus: Unfollow everyone
+  Seu navegador tenta te proteger de colar um script aleatório que você encontrou. Digite "allow pasting" (Firefox) ou "allow pasting" (Chrome) e pressione Enter para confirmar que você sabe o que está fazendo.
 
-Under "Advanced options" you can automatically unfollow everyone. You may need to rerun with some time in between because of rate limits.
+### A X Corp não está enviando minha exportação de dados:
 
-# Known issues and solutions
-- I can't paste the script.
+Tente solicitar através do [Formulário de Privacidade](https://help.x.com/en/forms/privacy/request-account-info/me).
 
-  Your browser tries to protect you from pasting some random script you found. Type "allow pasting" (Firefox) or "allow pasting" (Chrome) and hit enter to confirm that you know what you are doing.
+### Nem todos os Tweets foram removidos:
 
-- X Corp doesn't send me my data export.
+Verifique se o ID do Tweet restante está na sua exportação de dados. O script só pode excluir o que está no arquivo. Há uma opção para remover automaticamente os Tweets restantes nas "Opções Avançadas", mas ela é muito lenta. Se houver muitos Tweets, execute o script novamente. Talvez seja necessário solicitar uma nova exportação.
 
-Try requesting it through their [Privacy Form](https://help.x.com/en/forms/privacy/request-account-info/me).
+### Nenhum Tweet está visível no perfil, mas a contagem de Tweets mostra que ainda há Tweets restantes:
 
-- Not all Tweets got removed.
+Na maioria dos casos, esses são Retweets de Tweets de contas que foram desativadas ou banidas. Às vezes, os Tweets reaparecem quando as contas voltam, às vezes não. Não há nada que você possa fazer.
 
-Check if the ID of the remaining Tweet is in your data export. The script can only remove what's in the file. There is a option to automatically remove remaining Tweets under "Advanced options" but it is very slow. If there are many Tweets, re-run the script. Maybe request a new export.
+### As Curtidas não foram removidas:
 
-- No Tweets are visible on the profile, but Tweet count shows there are still Tweets left.
+Apenas as últimas poucas centenas podem ser removidas. Mesmo manualmente. Não há nada que você possa fazer, além de excluir sua conta inteira ou curtir Tweets para descurti-los depois, o que provavelmente fará com que sua conta seja bloqueada por spam.
 
-In most cases those are Retweets from Tweets from accounts that got deactivated or banned. Sometimes the Tweets reappear once the accounts come back, sometimes they don't. There is nothing you can do.
+### Navegador travando:
 
-- Likes aren't removed.
+  Isso acontece com mais frequência no Chrome e em navegadores baseados no Chrome. Especialmente ao remover mais de 15 mil Tweets. Fechar o console do navegador enquanto o script está rodando pode reduzir a possibilidade de falhas.
 
-Only the last few hundred can be be removed. Even by hand. There is nothing you can do other than deleting your whole account. Or reliking Tweets to unlike them afterwards which will probably get your account locked for spamming.
+### Funcionou e você está agradecido:
 
-- Browser crashes
-
-  This happens more often with Chrome and Chrome-based browsers. Especially when removing more than 15 k Tweets. Closing the browser console while it runs seems to reduce the crashes.
-
-- It worked and you are thankful.
-
-Awesome. Share the script on whatever platform you are using now to give others the option to delete their Tweets. Support me to keep creating things like this: [buymeacoffee.com/lucahammer](https://www.buymeacoffee.com/lucahammer)
+Incrível. Compartilhe o script na plataforma que você estiver usando agora para dar aos outros a opção de excluir seus Tweets. Apoie o criador do script original: [buymeacoffee.com/lucahammer](https://www.buymeacoffee.com/lucahammer).

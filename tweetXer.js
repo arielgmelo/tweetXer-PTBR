@@ -159,32 +159,35 @@ var TweetsXer = {
         var div = document.createElement("div")
         div.id = this.dId
         if (document.getElementById(this.dId)) { document.getElementById(this.dId).remove() }
-        div.innerHTML = `<style>#${this.dId}{ z-index:99999; position: sticky; top:0px; left:0px; width:auto; margin:0 auto; padding: 20px 10%; background:#87CEFA; opacity:0.9; } #${this.dId} > *{padding:5px;}</style>
-        <div style="color:black">
-            <h2 class="${h2_class}" id="${this.dId}_title">TweetXer</h2>
-            <p id="info">Select your tweet-headers.js from your Twitter Data Export to start the deletion of all your Tweets. </p>
+        div.innerHTML = `<style>#${this.dId}{ z-index:99999; position: sticky; top:0px; left:0px; width:auto; margin:0 auto; padding: 20px 10%; font-family: Arial; background: #1E90E9; opacity:1.0;} #${this.dId} > *{padding:5px;}</style>
+        <div style="color:white">
+            <h2 class="${h2_class}" id="${this.dId}_title">TweetXer BR</h2>
+            <p id="info">Selecione o arquivo <strong>tweet-headers.js</strong> da sua pasta de dados exportados do Twitter para iniciar a exclusão de todos os seus tweets.</p>
+            <p>Dê preferencia ao Firefox ou Safari para evitar bugs.<br>
+            Em caso de travamentos durante o processo de exclusão, recarregar a página e executar o script novamente.</p>
         <p id="start">
           <input type="file" value="" id="${this.dId}_file"  />
-          <a style="color:blue" href="#" id="toggleAdvanced">Advanced Options</a>
+          <a style="color:white" href="#" id="toggleAdvanced">Opções Avançadas</a>
           <div id="advanced" style="display:none">
-          <label for="skipCount">Enter how many Tweets to skip (useful for reruns) before selecting a file.</label>
+          <label for="skipCount">Digite quantos tweets pular (útil para reexecuções) antes de selecionar um arquivo.</label>
           <input id="skipCount" type="number" value="0" />
 
-          <p>To delete your Favs (aka Likes), select your like.js file.</p>
-          <p>Instead of your tweet-headers.js file, you can use the tweets.js file. Unfaving is limited to 500 unfavs per 15 minutes.</p>
-          <input id="exportBookmarks" type="button" value="Export Bookmarks" />
+          <p>Em vez do arquivo tweet-headers.js, você pode usar o arquivo <strong>tweets.js.</strong></p>
+          <p>Para excluir suas Curtidas, selecione o arquivo <strong>like.js.</strong><br>
+            A função de Descurtir está limitada a 500 processos a cada 15 minutos.<br>
+            <input id="exportBookmarks" type="button" value="Exportar Salvos"/></p>
 
-          <p><strong>No tweet-headers.js?</strong><br>
-            If you are unable to get your data export, you can use the following option.<br>
-            This option is much slower and less reliable. It can remove at most 4000 Tweets per hour.<br>
-            <input id="slowDelete" type="button" value="Slow delete without file" />
+          <p><strong>Sem o arquivo tweet-headers.js?</strong><br>
+            Caso você nao consiga exportar seus dados pelo Twitter, você pode usar a opção abaixo.<br>
+            Essa opção é muito mais lenta e menos eficiente. Ela pode remover, no máximo, 4000 tweets por hora:<br>
+            <input id="slowDelete" type="button" value="Apagar Tweets sem o arquivo tweet-headers.js"/>
           </p>
 
-          <p><strong>Unfollow everyone</strong><br>
-            It's time to let go. This will unfollow everyone you follow.<br>
-            <input id="unfollowEveryone" type="button" value="Unfollow everyone" />
+          <p><strong>Deixar de seguir todo mundo</strong><br>
+            É hora de desapegar. O botão abaixo fará com que deixe seguir todas as pessoas que você segue:<br>
+            <input id="unfollowEveryone" type="button" value="Deixar de seguir"/>
           </p>
-        <p><input id="removeTweetXer" type="button" value="Remove TweetXer" /></p>
+        <p><input id="removeTweetXer" type="button" value="Parar o TweetXer"/></p>
         </div>
         </p>
         </div>`
