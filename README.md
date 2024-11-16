@@ -13,7 +13,7 @@ Você pode usar [este script](https://github.com/arielgmelo/tweetXer-ptbr/blob/m
 3.  Abra o console do navegador (F12).
 4.  Cole o [script completo](https://github.com/arielgmelo/tweetXer-ptbr/blob/main/tweetXer.js) no console e pressione Enter.
 5.  Uma barra azul irá aparecer no topo da sua janela.
-6.  Use o seletor de arquivo e selecione o arquivo tweet-headers.js oo tweets.js.
+6.  Use o seletor de arquivo e selecione o arquivo tweet-headers.js ou tweets.js.
 7.  Espere até que todos os tweets sejam excluídos (cerca de 5-10 Tweets por segundo)
 
 Se o processo for interrompido a qualquer momento, você pode usar as opções avançadas para informar quantos Tweets foram excluídos na execução anterior, para não começar do zero novamente. O script tentará detectar automaticamente se já foi executado anteriormente, calculando a diferença entre os Tweets no arquivo e a contagem de Tweets no perfil. Se houver uma diferença, ele tentará pular automaticamente essa quantidade (+5% de margem). Se você quiser que ele comece do início, abra as 'Opções Avançadas' e insira 1 em vez de 0. Ele então pulará exatamente um Tweet e não tentará calcular uma quantidade.
