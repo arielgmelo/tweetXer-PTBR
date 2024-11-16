@@ -14,9 +14,9 @@ Você pode usar [este script](https://github.com/arielgmelo/tweetXer-ptbr/blob/m
 4.  Cole o [script completo](https://github.com/arielgmelo/tweetXer-ptbr/blob/main/tweetXer.js) no console e pressione Enter.
 5.  Uma barra azul irá aparecer no topo da sua janela.
 6.  Use o seletor de arquivo e selecione o arquivo tweet-headers.js ou tweets.js.
-7.  Espere até que todos os tweets sejam excluídos (cerca de 5-10 Tweets por segundo)
+7.  Espere até que todos os tweets sejam excluídos (cerca de 5-10 Tweets por segundo).
 
-Se o processo for interrompido a qualquer momento, você pode usar as opções avançadas para informar quantos Tweets foram excluídos na execução anterior, para não começar do zero novamente. O script tentará detectar automaticamente se já foi executado anteriormente, calculando a diferença entre os Tweets no arquivo e a contagem de Tweets no perfil. Se houver uma diferença, ele tentará pular automaticamente essa quantidade (+5% de margem). Se você quiser que ele comece do início, abra as 'Opções Avançadas' e insira 1 em vez de 0. Ele então pulará exatamente um Tweet e não tentará calcular uma quantidade.
+Se o processo for interrompido a qualquer momento, você pode usar as Opções Avançadas para informar quantos Tweets foram excluídos na execução anterior, para não começar do zero novamente. O script tentará detectar automaticamente se já foi executado anteriormente, calculando a diferença entre os Tweets no arquivo e a contagem de Tweets no perfil. Se houver uma diferença, ele tentará pular automaticamente essa quantidade (+5% de margem). Se você quiser que ele comece do início, abra as 'Opções Avançadas' e insira 1 em vez de 0. Ele então pulará exatamente um Tweet e não tentará calcular uma quantidade.
 
 # Como funciona?
 
@@ -54,7 +54,7 @@ Tente solicitar através do [Formulário de Privacidade](https://help.x.com/en/f
 
 Verifique se o ID do Tweet restante está na sua exportação de dados. O script só pode excluir o que está no arquivo. Há uma opção para remover automaticamente os Tweets restantes nas "Opções Avançadas", mas ela é muito lenta. Se houver muitos Tweets, execute o script novamente. Talvez seja necessário solicitar uma nova exportação.
 
-### Nenhum Tweet está visível no perfil, mas a contagem de Tweets mostra que ainda há Tweets restantes:
+### Nenhum Tweet está visível no perfil mas a contagem de Tweets mostra que ainda há Tweets restantes:
 
 Na maioria dos casos, esses são Retweets de Tweets de contas que foram desativadas ou banidas. Às vezes, os Tweets reaparecem quando as contas voltam, às vezes não. Não há nada que você possa fazer.
 
@@ -64,7 +64,7 @@ Apenas as últimas poucas centenas podem ser removidas. Mesmo manualmente. Não 
 
 ### Navegador travando:
 
-  Isso acontece com mais frequência no Chrome e em navegadores baseados no Chrome. Especialmente ao remover mais de 15 mil Tweets. Fechar o console do navegador enquanto o script está rodando pode reduzir a possibilidade de falhas.
+Isso acontece com mais frequência no Chrome e em navegadores baseados no Chrome. Especialmente ao remover mais de 15 mil Tweets. Fechar o console do navegador enquanto o script está rodando pode reduzir a possibilidade de falhas.
 
 ### Funcionou e você está agradecido:
 
